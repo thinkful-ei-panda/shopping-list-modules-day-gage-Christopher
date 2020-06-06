@@ -52,8 +52,7 @@ const render = function () {
 const addItemToShoppingList = function (itemName) {
   try {
     let  name = item.validateName(itemName);
-    item.create(name);
-    let n  = store.items.push(itemName);
+    const n = item.create(name);
     store.items.push(n);
     render();
   } catch(e){
