@@ -44,17 +44,13 @@ const render = function () {
   // insert that HTML into the DOM
   $('.js-shopping-list').html(shoppingListItemsString);
 };
-/*******************************************************************************************/
-/********PART 4. Wire up your item methods to be used by your shopping-list module ********/
-/*****************************************************************************************/
 
-/******vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv FIX THIS***********************/
 const addItemToShoppingList = function (itemName) {
   try {
     let  name = item.validateName(itemName);
-    const n = item.create(name);
-    store.items.push(n);
+    store.items.push(item.create(name));
     render();
+    item.create(name);
   } catch(e){
     console.log('Cannot add item : ${error.message}');
   }
